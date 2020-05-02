@@ -13,7 +13,6 @@ import javax.validation.constraints.NotNull;
 public class UserDTO {
 
 
-
     private Long id;
 
     @Email(message = "Email inválido")
@@ -26,4 +25,4 @@ public class UserDTO {
     @Length(min = 3, max = 6, message = "A senha deve conter entre 3 e 6 caracteres")
     private String password;
 
-   }
+}
