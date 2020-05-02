@@ -17,4 +17,5 @@ public class Wallet extends AbstractEntity<Long> {
 
     @NotNull
     private BigDecimal value;
-}
+
+   }

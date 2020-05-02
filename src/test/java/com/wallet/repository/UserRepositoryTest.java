@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @ActiveProfiles("test")
-public class RepositoryTest {
+public class UserRepositoryTest {
 
     private static final String EMAIL = "teste@teste.com";
 
