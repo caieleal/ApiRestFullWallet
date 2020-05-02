@@ -4,7 +4,7 @@ import com.wallet.dto.UserDTO;
 import com.wallet.entity.User;
 import com.wallet.util.Bcrypt;
 
-public class Converter {
+public class ConvertUsers {
 
     protected User convertDtoToEntity(UserDTO userDTO) {
         User user = new User();

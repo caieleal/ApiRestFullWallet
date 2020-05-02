@@ -1,7 +1,7 @@
 package com.wallet.controller;
 
 
-import com.wallet.convert.Converter;
+import com.wallet.convert.ConvertUsers;
 import com.wallet.dto.UserDTO;
 import com.wallet.entity.User;
 import com.wallet.response.Response;
@@ -19,7 +19,7 @@ import javax.validation.Valid;
 
 @RestController
 @RequestMapping("user")
-public class UserController extends Converter {
+public class UserController extends ConvertUsers {
 
     @Autowired
     private UserService userService;
