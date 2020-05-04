@@ -29,19 +29,21 @@ public class RepositoryWalletTest {
     private WalletRepository repository;
 
     @Before
-    public void init(){
+    public void init() {
         Wallet wallet = new Wallet();
         wallet.setId(ID);
         wallet.setName(NAME);
         wallet.setValue(BigDecimal.valueOf(VALUE));
         repository.save(wallet);
     }
+
     @After
-    public void finish(){
+    public void finish() {
         repository.deleteAll();
     }
+
     @Test
-    public void testSave(){
+    public void testSave() {
         Wallet wallet = new Wallet();
         wallet.setId(ID);
         wallet.setValue(BigDecimal.valueOf(VALUE));
