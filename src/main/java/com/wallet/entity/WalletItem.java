@@ -1,5 +1,6 @@
 package com.wallet.entity;
 
+import com.wallet.util.enums.TypeEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,7 +26,8 @@ public class WalletItem extends AbstractEntity<Long> {
     private Date date;
 
     @NotNull
-    private String type;
+    @Enumerated(EnumType.STRING)
+    private TypeEnum type;
 
     @NotNull
     private String description;
@@ -35,7 +37,7 @@ public class WalletItem extends AbstractEntity<Long> {
 
 
 
-    public WalletItem(Long id, @NotNull Wallet wallet, @NotNull Date date, @NotNull String type, @NotNull String description, @NotNull BigDecimal value) {
+    public WalletItem(Long id, @NotNull Wallet wallet, @NotNull Date date, @NotNull TypeEnum type, @NotNull String description, @NotNull BigDecimal value) {
         this.setId(id);
         this.wallet = wallet;
         this.date = date;
