@@ -23,8 +23,8 @@ public class ConvertUsersWallets {
     protected UserWalletDTO convertEntityToDto(UserWallet userWallet){
         UserWalletDTO userWalletDTO = new UserWalletDTO();
         userWalletDTO.setId(userWallet.getId());
-        userWalletDTO.setUsers(userWallet.getUsers().getId());
         userWalletDTO.setWallet(userWallet.getWallet().getId());
+        userWalletDTO.setUsers(userWallet.getUsers().getId());
         return userWalletDTO;
     }
 }

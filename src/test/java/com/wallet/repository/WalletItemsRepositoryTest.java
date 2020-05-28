@@ -2,6 +2,7 @@ package com.wallet.repository;
 
 import com.wallet.entity.Wallet;
 import com.wallet.entity.WalletItem;
+import com.wallet.util.enums.TypeEnum;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 public class WalletItemsRepositoryTest {
 
     private static final Date DATE = new Date();
-    private static final String TYPE = "EN";
+    private static final TypeEnum TYPE = TypeEnum.EN;
     private static final String DESCRIPTION = "CONTA DE LUZ";
     private static final BigDecimal VALUE = BigDecimal.valueOf(65);
 

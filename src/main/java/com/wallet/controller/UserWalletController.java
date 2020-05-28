@@ -18,25 +18,26 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping(path = "user-wallet")
+@RequestMapping(path = "/user-wallet")
 public class UserWalletController extends ConvertUsersWallets {
 
     @Autowired
     private UserWalletService service;
 
     @PostMapping
-    private ResponseEntity<Response<UserWalletDTO>> create(@Valid @RequestBody UserWalletDTO dto, BindingResult result) {
+    public ResponseEntity<Response<UserWalletDTO>> createUserWallet(@Valid @RequestBody UserWalletDTO dto, BindingResult result) {
+
         Response<UserWalletDTO> response = new Response<>();
 
         if (result.hasErrors()) {
-            result.getAllErrors().forEach(error -> response.getErrors().add(error.getDefaultMessage()));
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);
+            result.getAllErrors().forEach(e -> response.getErrors().add(e.getDefaultMessage()));
+            return ResponseEntity.badRequest().body(response);
         }
         UserWallet userWallet = service.save(this.convertDtoToEntity(dto));
         response.setData(this.convertEntityToDto(userWallet));
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
 
-
     }
+
 
 }
